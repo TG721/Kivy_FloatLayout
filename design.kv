@@ -1,0 +1,57 @@
+<Button>
+    background_color: (32/255, 0, 1, 1)
+    size_hint: (0.3, 0.3) #30% of root layout
+
+<MyLayout>
+    button_1_var: btn1
+    label_var : label
+
+    FloatLayout:
+        size: root.width, root.height
+
+
+        Button:
+            id: btn1
+            text: "Top left"
+            pos_hint: {"y": 0.7}
+            on_press: root.on_button_click(self)
+        Button:
+            id: btn2
+            text: "Top middle"
+            pos_hint: {"y": 0.7, "x": 0.35}
+            on_press: root.on_button_click(self)
+        Button:
+            id: btn3
+            text: "Top right"
+            pos_hint: {"y": 0.7, "x": 0.7}
+            on_press: root.on_button_click(self)
+        Button:
+            id: btn4
+            text: "Middle left"
+            pos_hint: {"y": 0.35, "x": 0}
+            on_press: root.on_button_click(self)
+        Button:
+            id: btn5
+            pos_hint: {"y": 0.35, "x": 0.35}
+            text: "Middle middle"
+            on_press: root.on_button_click(self)
+        Image:
+            source: 'Witcher3.jpg'
+            size_hint: (0.3, 0.3)
+            pos_hint: {"y": 0.35, "x": 0.7}
+#            keep_ratio: False
+#            allow_stretch: True
+
+        Button:
+            id: btn7
+            pos_hint: {"y": 0, "x": 0}
+            text: "bottom left"
+            on_press: root.on_button_click(self)
+
+        Label:
+            id: label
+            text: "Click on any button"
+            pos_hint: {"y": 0, "x": 0.35}
+            size_hint: (0.6, 0.3)
+
+#grid and box layouts case size hint is relative to row while in float layout it is relative to entire layout
